@@ -12,9 +12,9 @@ data Period = Period
 
 createPeriod :: IO Period
 createPeriod = do
-  putStrLn "Enter type datetime_start:"
+  putStrLn "Enter period datetime_start:"
   _datetime_start <- getLine
-  putStrLn "Enter type datetime_end:"
+  putStrLn "Enter period datetime_end:"
   _datetime_end <- getLine
   return
     Period
@@ -25,10 +25,10 @@ createPeriod = do
 
 printPeriod :: Period -> IO ()
 printPeriod _period = do
-  putStrLn "Type:"
-  putStr (" Id: " ++ show (uid _period))
-  putStr (" Start: " ++ datetime_start _period)
-  putStr (" End: " ++ datetime_end _period)
+  putStrLn "Period:"
+  putStrLn ("\tId: " ++ show (uid _period))
+  putStrLn ("\tStart: " ++ datetime_start _period)
+  putStrLn ("\tEnd: " ++ datetime_end _period)
   putStrLn ""
 
 instance Common Period where

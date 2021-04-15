@@ -11,7 +11,7 @@ data Term = Term
 
 createTerm :: IO Term
 createTerm = do
-  putStrLn "Enter type text:"
+  putStrLn "Enter term text:"
   _text <- getLine
   return
     Term
@@ -22,8 +22,8 @@ createTerm = do
 printTerm :: Term -> IO ()
 printTerm _term = do
   putStrLn "Term:"
-  putStr (" Id: " ++ show (uid _term))
-  putStr (" Text: " ++ text _term)
+  putStrLn ("\tId: " ++ show (uid _term))
+  putStrLn ("\tText: " ++ text _term)
   putStrLn ""
 
 instance Common Term where

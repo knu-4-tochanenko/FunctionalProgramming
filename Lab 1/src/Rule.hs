@@ -11,7 +11,7 @@ data Rule = Rule
 
 createRule :: IO Rule
 createRule = do
-  putStrLn "Enter type text:"
+  putStrLn "Enter rule text:"
   _text <- getLine
   return
     Rule
@@ -21,9 +21,9 @@ createRule = do
 
 printRule :: Rule -> IO ()
 printRule _rule = do
-  putStrLn "Type:"
-  putStr (" Id: " ++ show (uid _rule))
-  putStr (" Text: " ++ text _rule)
+  putStrLn "Rule:"
+  putStrLn ("\tId: " ++ show (uid _rule))
+  putStrLn ("\tText: " ++ text _rule)
   putStrLn ""
 
 instance Common Rule where

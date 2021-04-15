@@ -16,17 +16,17 @@ data Service = Service
 
 createService :: IO Service
 createService = do
-  putStrLn "Enter type name:"
+  putStrLn "Enter service name:"
   _name <- getLine
-  putStrLn "Enter type author_id:"
+  putStrLn "Enter service author_id:"
   _author_id <- getLine
-  putStrLn "Enter type version:"
+  putStrLn "Enter service version:"
   _version <- getLine
-  putStrLn "Enter type term_id:"
+  putStrLn "Enter service term_id:"
   _term_id <- getLine
-  putStrLn "Enter type rule_id:"
+  putStrLn "Enter service rule_id:"
   _rule_id <- getLine
-  putStrLn "Enter type period_id:"
+  putStrLn "Enter service period_id:"
   _period_id <- getLine
   return
     Service
@@ -42,13 +42,13 @@ createService = do
 printService :: Service -> IO ()
 printService _service = do
   putStrLn "Service:"
-  putStr (" Id: " ++ show (uid _service))
-  putStr (" Name: " ++ name _service)
-  putStr (" Author Id: " ++ show (author_id _service))
-  putStr (" Version: " ++ show (version _service))
-  putStr (" Term Id: " ++ show (term_id _service))
-  putStr (" Rule Id: " ++ show (rule_id _service))
-  putStr (" Period Id: " ++ show (period_id _service))
+  putStrLn ("\tId: " ++ show (uid _service))
+  putStrLn ("\tName: " ++ name _service)
+  putStrLn ("\tAuthor Id: " ++ show (author_id _service))
+  putStrLn ("\tVersion: " ++ show (version _service))
+  putStrLn ("\tTerm Id: " ++ show (term_id _service))
+  putStrLn ("\tRule Id: " ++ show (rule_id _service))
+  putStrLn ("\tPeriod Id: " ++ show (period_id _service))
   putStrLn ""
 
 instance Common Service where

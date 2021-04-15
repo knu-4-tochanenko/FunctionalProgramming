@@ -11,7 +11,7 @@ data Subscription = Subscription
 
 createSubscription :: IO Subscription
 createSubscription = do
-  putStrLn "Enter type text:"
+  putStrLn "Enter subscription text:"
   _text <- getLine
   return
     Subscription
@@ -22,8 +22,8 @@ createSubscription = do
 printSubscription :: Subscription -> IO ()
 printSubscription _subscription = do
   putStrLn "Subscription:"
-  putStr (" Id: " ++ show (uid _subscription))
-  putStr (" Text: " ++ text _subscription)
+  putStrLn ("\tId: " ++ show (uid _subscription))
+  putStrLn ("\tText: " ++ text _subscription)
   putStrLn ""
 
 instance Common Subscription where

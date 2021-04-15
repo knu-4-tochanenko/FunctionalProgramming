@@ -13,11 +13,11 @@ data User = User
 
 createUser :: IO User
 createUser = do
-  putStrLn "Enter type name:"
+  putStrLn "Enter user name:"
   _name <- getLine
-  putStrLn "Enter type surname:"
+  putStrLn "Enter user surname:"
   _surname <- getLine
-  putStrLn "Enter type email:"
+  putStrLn "Enter user email:"
   _email <- getLine
   return
     User
@@ -29,11 +29,11 @@ createUser = do
 
 printUser :: User -> IO ()
 printUser _user = do
-  putStrLn "Subscription:"
-  putStr (" Id: " ++ show (uid _user))
-  putStr (" Name: " ++ name _user)
-  putStr (" Surname: " ++ surname _user)
-  putStr (" Email: " ++ email _user)
+  putStrLn "User:"
+  putStrLn ("\tId: " ++ show (uid _user))
+  putStrLn ("\tName: " ++ name _user)
+  putStrLn ("\tSurname: " ++ surname _user)
+  putStrLn ("\tEmail: " ++ email _user)
   putStrLn ""
 
 instance Common User where
